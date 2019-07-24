@@ -9,6 +9,7 @@
 - Slides - <https://sika.link/gitlab-ci>
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/gitlab-ci-runner>
 - Gitlab on Digital Ocean using Terraform - <https://github.com/ondrejsika/terraform-demo-gitlab>
+- `ondrejsika/ci` Docker image - <https://github.com/ondrejsika/ondrejsika-ci-docker>
 
 ### Examples
 
