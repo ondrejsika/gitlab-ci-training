@@ -10,6 +10,8 @@
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/gitlab-ci-runner>
 - Gitlab on Digital Ocean using Terraform - <https://github.com/ondrejsika/terraform-demo-gitlab>
 - `ondrejsika/ci` Docker image - <https://github.com/ondrejsika/ondrejsika-ci-docker>
+- [Traefik](https://traefik.io) (proxy) with Let's Encrypt - <https://github.com/ondrejsika/traefik-le>
+
 
 ### Examples
 
