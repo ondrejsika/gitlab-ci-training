@@ -459,3 +459,5 @@ stop:
 - web:	<https://ondrej-sika.cz>
 - twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
+
+_Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn. Thanks._
