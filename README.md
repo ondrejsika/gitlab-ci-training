@@ -204,6 +204,34 @@ reporting:
   when: always
 ```
 
+#### Allow Failure
+
+You can specify flag `allow_failure` to `true`, job can fail but pipeline will succeed.
+
+```yaml
+# .gitlab-ci.yml
+
+test:
+  script: echo test ... && false
+  allow_failure: true
+```
+
+Manual jobs are allowed to fail by default, if you want to disallow failure, you have to set `allow_failure` to `false`.
+
+```yaml
+# .gitlab-ci.yml
+
+test:
+  when: manual
+  script: echo test ... && false
+
+test2:
+  when: manual
+  script: echo test ... && false
+  allow_failure: false
+```
+
+
 #### Only & Except
 
 You can specify another condition when you can run jobs. You can specify branches and tags on which you want to run your jobs or not.
