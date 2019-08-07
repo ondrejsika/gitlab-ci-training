@@ -330,20 +330,6 @@ variables:
   IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
 ```
 
-Same for local varibles, you can use another local variable but you can use variables from setting and CI and also global variables defined in CI YAML.
-
-```yaml
-# .gitlab-ci.yml
-
-variables:
-  SUFFIX: web.sikademo.cz
-
-job:
-  variables:
-    HOST: hello.$SUFFIX
-  script:
-    - echo $HOST
-```
 
 ### Cache
 
