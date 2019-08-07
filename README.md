@@ -321,6 +321,30 @@ job2:
   script: env | grep XXX
 ```
 
+You can also create variables from variables, but you can't use varible defined in same place. If you create global variabl, you can use only CI default variables and custom variables setted up in project or group CI settings.
+
+```yaml
+# .gitlab-ci.yml
+
+variables:
+  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+```
+
+Same for local varibles, you can use another local variable but you can use variables from setting and CI and also global variables defined in CI YAML.
+
+```yaml
+# .gitlab-ci.yml
+
+variables:
+  SUFFIX: web.sikademo.cz
+
+job:
+  variables:
+    HOST: hello.$SUFFIX
+  script:
+    - echo $HOST
+```
+
 ### Cache
 
 Cache is used to specify a list of files and directories which should be cached between jobs. You can only use paths that are within the project workspace.
