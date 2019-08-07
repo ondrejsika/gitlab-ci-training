@@ -421,6 +421,41 @@ When the job succed, you can browse and download job from Gitlab.
 
 More about artifacts: <https://docs.gitlab.com/ce/user/project/pipelines/job_artifacts.html>
 
+#### Artifacts Dependencies
+
+By default, all artifacts will be passed to jobs in following stages. If you want artifact only from specific jobs, you can use dependencies to choose which articact you want.
+
+Fists usage is when artifact are on same path and there will be colision, see:
+
+```yaml
+# .gitlab-ci.yml
+
+stages:
+  - build
+  - test
+
+build_A:
+  stage: build
+  script: mkdir -p out && echo '<h1>Hello from Project A!</h1>' > out/index.html
+  artifacts: paths: [out]
+
+build_B:
+  stage: build
+  script: mkdir -p out && echo '<h1>Hello from Project B!</h1>' > out/index.html
+  artifacts: paths: [out]
+
+test A:
+  stage: test
+  script: cat out/index.html
+  dependencies: [ build A ]
+
+test B:
+  stage: test
+  script: cat out/index.html
+  dependencies: [ build B ]
+```
+
+Or you can use dependencies when you have lots of artifact and dont want to slow down your jobs by downloading unnecessary artifacts.
 
 ### Docker
 
