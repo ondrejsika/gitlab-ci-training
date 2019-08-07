@@ -499,7 +499,8 @@ If you want to run Docker container and pass there all environment variables, yo
 
 job:
   script:
-    - docker run --rm --env-file <(env) debian env
+    - env > .env
+    - docker run --rm --env-file .env debian env
 ```
 
 
