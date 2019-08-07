@@ -423,12 +423,12 @@ stages:
 build_A:
   stage: build
   script: mkdir -p out && echo '<h1>Hello from Project A!</h1>' > out/index.html
-  artifacts: paths: [out]
+  artifacts: {paths: [out]}
 
 build_B:
   stage: build
   script: mkdir -p out && echo '<h1>Hello from Project B!</h1>' > out/index.html
-  artifacts: paths: [out]
+  artifacts: {paths: [out]}
 
 test A:
   stage: test
