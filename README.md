@@ -344,6 +344,25 @@ job:
 
 More about caches: <https://docs.gitlab.com/ce/ci/caching/index.html>
 
+
+#### Git Clean Flags
+
+Instead of cache, you can use faster option how to keep some data in repository. If you are using cache, your repository is cleaned by `git clean -ffdx`, which means remove all ignored & untracked files and directories. Then your cache is downloaded and extracted into your working directory. This way is not fastest way if you have thousands files in cache (like node modules, for example).
+
+Instead of cache, you can specify variable `GIT_CLEAN_FLAGS` and use own git clean arguments. If you want to ignore node modules from git clean, you can set `-ffdx -e node_modules`.
+
+```yaml
+# .gitlab-ci.yml
+
+job:
+  variables:
+    GIT_CLEAN_FLAGS: -ffdx -e node_modules
+  script:
+    - yarn
+    - yarn build
+```
+
+
 ### Artifacts
 
 Artifacts is used to specify a list of files and directories which should be attached to the job when it succeeds, fails, or always.
