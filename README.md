@@ -435,12 +435,12 @@ build_B:
 test A:
   stage: test
   script: cat out/index.html
-  dependencies: [ build A ]
+  dependencies: [ build_A ]
 
 test B:
   stage: test
   script: cat out/index.html
-  dependencies: [ build B ]
+  dependencies: [ build_B ]
 ```
 
 Or you can use dependencies when you have lots of artifact and dont want to slow down your jobs by downloading unnecessary artifacts.
