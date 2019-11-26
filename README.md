@@ -555,6 +555,7 @@ stop:
 ### Examples
 
 - Docker Compose deployment with Traefik - <https://github.com/ondrejsika/gitlab-ci-docker-compose-traefik--example>
+- Kubernetes Deployment - <https://github.com/ondrejsika/gitlab-ci-example-kubernetes>
 
 
 ## Thank you & Questions
