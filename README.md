@@ -1,3 +1,5 @@
+[Ondrej Sika (sika.io)](https://.sika.io) | <ondrej@sika.io>
+
 # Gitlab CI Training
 
     Ondrej Sika <ondrej@ondrejsika.com>
@@ -560,8 +562,8 @@ stop:
 
 ### Ondrej Sika
 
-- email:	<ondrej@ondrejsika.com>
-- web:	<https://ondrej-sika.cz>
+- email:	<ondrej@sika.io>
+- web:	<https://sika.io>
 - twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
 - linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
 
