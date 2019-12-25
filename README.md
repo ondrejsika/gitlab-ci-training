@@ -1,4 +1,4 @@
-[Ondrej Sika (sika.io)](https://.sika.io) | <ondrej@sika.io>
+[Ondrej Sika (sika.io)](https://sika.io) | <ondrej@sika.io>
 
 # Gitlab CI Training
 
