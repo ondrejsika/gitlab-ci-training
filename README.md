@@ -76,7 +76,7 @@ You can setup Gitlab on Digital Ocean & Cloudflare using Terraform
 #### Login
 
 - Gitlab - <https://gitlab.sikademo.com>
-- User - `test1`
+- User - `demo`
 - Password - `asdfasdf`
 
 
