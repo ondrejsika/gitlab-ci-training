@@ -100,7 +100,7 @@ Here is a Gitlab CI YAML reference - <https://docs.gitlab.com/ce/ci/yaml/README.
 
 ### First Job
 
-Create new projet and create there file `.gitlab-ci.yaml` with following content:
+Create new projet and create there file `.gitlab-ci.yml` with following content:
 
 ```yaml
 # .gitlab-ci.yml
