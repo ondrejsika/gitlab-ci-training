@@ -5,6 +5,40 @@
     Ondrej Sika <ondrej@ondrejsika.com>
     https://github.com/ondrejsika/gitlab-ci-training
 
+## About Course
+
+- [Gitlab CI Training in Czech Republic](https://ondrej-sika.cz/skoleni/gitlab-ci?_s=gh-gitlab-ci-training)
+- [Docker Training in Europe](https://ondrej-sika.com/training/gitlab-ci?_s=gh-gitlab-ci-training)
+
+### Any Questions?
+
+Write me mail to <ondrej@sika.io>
+
+## Course
+
+## About Me - Ondrej Sika
+
+**Freelance DevOps Engineer, Consultant & Lecturer**
+
+- Complete DevOps Pipeline
+- Open Source / Linux Stack
+- Cloud & On-Premise
+- Technologies: Git, Gitlab, Gitlab CI, Docker, Kubernetes, Terraform, Prometheus, ELK / EFK, Rancher, Proxmox
+
+## Star, Create Issues, Fork, and Contribute
+
+Feel free to star this repository or fork it.
+
+If you found bug, create issue or pull request.
+
+Also feel free to propose improvements by creating issues.
+
+## Live Chat
+
+For sharing links & "secrets".
+
+<https://tlk.io/sika-ci>
+
 ## Agenda
 
 - [What is CI](#what-is-ci)
