@@ -667,6 +667,21 @@ with open(".gitlab-ci.generated.yml", "w") as f:
     f.write(json.dumps(pipeline))
 ```
 
+### Multi Project Pipelines
+
+[Docs](https://docs.gitlab.com/ce/ci/multi_project_pipelines.html)
+
+Project **foo** depends on library **bar**. If you make any change in library **bar** you have to trigger pipeline in project **foo**. `ondrejsika/foo` is full path to project where you want to run pipeline.
+
+```yaml
+# .gitlab-ci.yml (library bar)
+job:
+  script: Do something
+
+triger-pipelines:
+  trigger: ondrejsika/foo
+```
+
 ## Resources
 
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/gitlab-ci-runner>
@@ -677,6 +692,7 @@ with open(".gitlab-ci.generated.yml", "w") as f:
 Docs:
 
 - [Child Pipelines](https://docs.gitlab.com/ce/ci/parent_child_pipelines.html)
+- [Multi Project Pipelines](https://docs.gitlab.com/ce/ci/multi_project_pipelines.html)
 
 ### Examples
 
