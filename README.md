@@ -540,3 +540,23 @@ stop:
 
 - Docker Compose deployment with Traefik - <https://github.com/ondrejsika/gitlab-ci-docker-compose-traefik--example>
 - Kubernetes Deployment - <https://github.com/ondrejsika/gitlab-ci-example-kubernetes>
+
+## Thank you! & Questions?
+
+That's it. Do you have any questions? **Let's go for a beer!**
+
+### Do you like the course? Tweet about it <3
+
+Please, tweet something with `@ondrejsika`. Thanks :)
+
+### Ondrej Sika
+
+- email: <ondrej@sika.io>
+- web: <https://sika.io>
+- twitter: [@ondrejsika](https://twitter.com/ondrejsika)
+- linkedin: [/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
+- Newsletter, Slack, Facebook & Linkedin Groups: <https://join.sika.io>
+
+### Next time?
+
+Wanna to go for a beer or do some work together? Just [book me](https://book-me.sika.io) :)
