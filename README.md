@@ -563,12 +563,59 @@ stop:
     action: stop
 ```
 
+### Child Pipelines
+
+[Docs](https://docs.gitlab.com/ce/ci/parent_child_pipelines.html)
+
+```yaml
+# .gitlab-ci.yml
+pipeline_a:
+  trigger:
+    include: a/.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+      - a/**
+
+pipeline_b:
+  trigger:
+    include: b/.gitlab-ci.yml
+    strategy: depend
+  only:
+    changes:
+      - b/**
+```
+
+```yaml
+# a/.gitlab-ci.yml
+
+build:
+  script: echo Build service A
+
+deploy:
+  script: echo Deploy service A
+```
+
+```yaml
+# b/.gitlab-ci.yml
+
+build:
+  script: echo Build service B
+
+deploy:
+  script: echo Deploy service B
+```
+
 ## Resources
 
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/gitlab-ci-runner>
 - Gitlab on Digital Ocean using Terraform - <https://github.com/ondrejsika/terraform-demo-gitlab>
 - `ondrejsika/ci` Docker image - <https://github.com/ondrejsika/ondrejsika-ci-docker>
 - [Traefik](https://traefik.io) (proxy) with Let's Encrypt - <https://github.com/ondrejsika/traefik-le>
+
+Docs:
+
+- [Child Pipelines](https://docs.gitlab.com/ce/ci/parent_child_pipelines.html)
 
 ### Examples
 
