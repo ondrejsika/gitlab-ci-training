@@ -5,7 +5,6 @@
     Ondrej Sika <ondrej@ondrejsika.com>
     https://github.com/ondrejsika/gitlab-ci-training
 
-
 ## Agenda
 
 - [What is CI](#what-is-ci)
@@ -14,23 +13,19 @@
 - [Deployments from CI](#deployments-from-ci)
 - [Example Project Pipeline](#example-project-pipeline)
 
-
 ## What is CI
 
 ### Git
 
 Git is a version control system for tracking changes in computer files and coordinating work on those files among multiple people.
 
-
 ### Gitlab
 
 From project planning and source code management to CI/CD and monitoring, GitLab is a complete DevOps platform, delivered as a single application.
 
-
 ### CI
 
 In software engineering, continuous integration is the practice of merging all developer working copies to a shared mainline several times a day.
-
 
 ### Usage of CI
 
@@ -72,20 +67,17 @@ You can setup Gitlab on Digital Ocean & Cloudflare using Terraform
 
 <https://github.com/ondrejsika/terraform-demo-gitlab>
 
-
 #### Login
 
 - Gitlab - <https://gitlab.sikademo.com>
 - User - `demo`
 - Password - `asdfasdf`
 
-
 ### Install Runners into Gitlab
 
-Go to [__Admin__ -> __Runners__](https://gitlab.sikademo.com/admin/runners)
+Go to [**Admin** -> **Runners**](https://gitlab.sikademo.com/admin/runners)
 
-And __Set up a shared Runner manually__
-
+And **Set up a shared Runner manually**
 
 ## CI Jobs
 
@@ -96,7 +88,6 @@ Configuration of everything aroud Gitlab CI is stored inside Git repository in f
 If you don't know YAML format, check out this simple YAML tutorial - <https://learnxinyminutes.com/docs/yaml/>
 
 Here is a Gitlab CI YAML reference - <https://docs.gitlab.com/ce/ci/yaml/README.html>
-
 
 ### First Job
 
@@ -116,7 +107,6 @@ Push to Gitlab and check it out.
 Jobs are smalles units which can be executed by Gitlab CI. Here are samples of common job configurations.
 
 Jobs are top level object in Gitlab CI YAML files instead of [few keywords](https://docs.gitlab.com/ce/ci/yaml/README.html#unavailable-names-for-jobs). Keywords are: `image`, `services`, `stages`, `types`, `before_script`, `after_script`, `variables`, `cache`
-
 
 #### Script
 
@@ -233,7 +223,6 @@ test2:
   allow_failure: false
 ```
 
-
 #### Only & Except
 
 You can specify another condition when you can run jobs. You can specify branches and tags on which you want to run your jobs or not.
@@ -299,12 +288,12 @@ You can define own variables in:
 - Globally in CI YAML
 - In job in CI YAML
 
-You can define varible in __Settings -> CI / CD -> Variables__. Same for project and group. You can define for example connection to your Kubernetes cluster, AWS credentials, ...
+You can define varible in **Settings -> CI / CD -> Variables**. Same for project and group. You can define for example connection to your Kubernetes cluster, AWS credentials, ...
 
 Variables can be defined as:
 
-- __Masked__ - Value is hidden from the CI output. You probably dont want to show any credential, even development one.
-- __Protected__ - Protected variable appears only in jobs on protected branches. If developers can't push to protected branches, there have no chance to get production deployment keys or deploy to production. After code has been merged to master (protected), then protected variables appears and you can deploy to production.
+- **Masked** - Value is hidden from the CI output. You probably dont want to show any credential, even development one.
+- **Protected** - Protected variable appears only in jobs on protected branches. If developers can't push to protected branches, there have no chance to get production deployment keys or deploy to production. After code has been merged to master (protected), then protected variables appears and you can deploy to production.
 
 Example job:
 
@@ -332,7 +321,6 @@ variables:
   IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
 ```
 
-
 ### Cache
 
 Cache is used to specify a list of files and directories which should be cached between jobs. You can only use paths that are within the project workspace.
@@ -356,7 +344,6 @@ job:
 
 More about caches: <https://docs.gitlab.com/ce/ci/caching/index.html>
 
-
 #### Git Clean Flags
 
 Instead of cache, you can use faster option how to keep some data in repository. If you are using cache, your repository is cleaned by `git clean -ffdx`, which means remove all ignored & untracked files and directories. Then your cache is downloaded and extracted into your working directory. This way is not fastest way if you have thousands files in cache (like node modules, for example).
@@ -373,7 +360,6 @@ job:
     - yarn
     - yarn build
 ```
-
 
 ### Artifacts
 
@@ -425,22 +411,22 @@ stages:
 build_A:
   stage: build
   script: mkdir -p out && echo '<h1>Hello from Project A!</h1>' > out/index.html
-  artifacts: {paths: [out]}
+  artifacts: { paths: [out] }
 
 build_B:
   stage: build
   script: mkdir -p out && echo '<h1>Hello from Project B!</h1>' > out/index.html
-  artifacts: {paths: [out]}
+  artifacts: { paths: [out] }
 
 test A:
   stage: test
   script: cat out/index.html
-  dependencies: [ build_A ]
+  dependencies: [build_A]
 
 test B:
   stage: test
   script: cat out/index.html
-  dependencies: [ build_B ]
+  dependencies: [build_B]
 ```
 
 Or you can use dependencies when you have lots of artifact and dont want to slow down your jobs by downloading unnecessary artifacts.
@@ -472,7 +458,7 @@ deploy:
 ```
 
 You can also run docker commands from job because we have added Docker socket there. See [here](https://github.com/ondrejsika/gitlab-ci-runner/blob/master/create-runner.sh#L6)
- and [here](https://github.com/ondrejsika/gitlab-ci-runner/blob/master/register-runner.sh#L14).
+and [here](https://github.com/ondrejsika/gitlab-ci-runner/blob/master/register-runner.sh#L14).
 
 ```yaml
 # .gitlab-ci.yml
@@ -504,7 +490,6 @@ job:
     - env > .env
     - docker run --rm --env-file .env debian env
 ```
-
 
 ### Environments
 
@@ -551,20 +536,7 @@ stop:
 - `ondrejsika/ci` Docker image - <https://github.com/ondrejsika/ondrejsika-ci-docker>
 - [Traefik](https://traefik.io) (proxy) with Let's Encrypt - <https://github.com/ondrejsika/traefik-le>
 
-
 ### Examples
 
 - Docker Compose deployment with Traefik - <https://github.com/ondrejsika/gitlab-ci-docker-compose-traefik--example>
 - Kubernetes Deployment - <https://github.com/ondrejsika/gitlab-ci-example-kubernetes>
-
-
-## Thank you & Questions
-
-### Ondrej Sika
-
-- email:	<ondrej@sika.io>
-- web:	<https://sika.io>
-- twitter: 	[@ondrejsika](https://twitter.com/ondrejsika)
-- linkedin:	[/in/ondrejsika/](https://linkedin.com/in/ondrejsika/)
-
-_Do you like the course? Write me recommendation on Twitter (with handle `@ondrejsika`) and LinkedIn. Thanks._
