@@ -113,6 +113,20 @@ Go to [**Admin** -> **Runners**](https://gitlab.sikademo.com/admin/runners)
 
 And **Set up a shared Runner manually**
 
+#### Setup our runner
+
+```
+ssh root@runner.sikademo.com
+```
+
+```
+git clone https://github.com/ondrejsika/gitlab-ci-runner
+cd gitlab-ci-runner
+./create-runner.sh
+./register-runner.sh https://gitlab.sikademo.com/ TV7jbPKGN53Z_7ruRXjQ
+./set-concurrency.sh
+```
+
 ## CI Jobs
 
 ### Gitlab CI YAML
