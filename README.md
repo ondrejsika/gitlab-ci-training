@@ -479,6 +479,30 @@ test B:
 
 Or you can use dependencies when you have lots of artifact and dont want to slow down your jobs by downloading unnecessary artifacts.
 
+### JUnit Test Reports
+
+[Docs](https://docs.gitlab.com/ee/ci/unit_test_reports.html)
+
+```python
+# test_example.py
+def test_ok():
+    assert True
+
+def test_err():
+    assert False
+```
+
+```yml
+# .gitlab-ci.yml
+test:
+  image: ondrejsika/pytest
+  script:
+    - pytest --junitxml=report.xml
+  artifacts:
+    reports:
+      junit: report.xml
+```
+
 ### Docker
 
 - Fully supported
