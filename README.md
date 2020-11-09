@@ -732,7 +732,7 @@ stages:
 
 generate:
   stage: generate
-  image: python:3.7
+  image: python:3.7-slim
   script: python generate-gitlab-ci.py
   artifacts:
     paths:
