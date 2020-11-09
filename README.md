@@ -693,20 +693,32 @@ pipeline_b:
 ```yaml
 # a/.gitlab-ci.yml
 
+stages:
+  - build
+  - deploy
+
 build:
+  stage: build
   script: echo Build service A
 
 deploy:
+  stage: deploy
   script: echo Deploy service A
 ```
 
 ```yaml
 # b/.gitlab-ci.yml
 
+stages:
+  - build
+  - deploy
+
 build:
+  stage: build
   script: echo Build service B
 
 deploy:
+  stage: deploy
   script: echo Deploy service B
 ```
 
