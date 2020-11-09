@@ -316,6 +316,34 @@ Build B:
 - Example monorepo with only changes - <https://github.com/ondrejsika/ondrejsikawebs>
 - Full Reference - <https://docs.gitlab.com/ce/ci/yaml/README.html#onlychangesexceptchanges>
 
+### Merge Request Pipelines
+
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script: echo build
+  only:
+    - branches
+    - merge_request
+
+test:
+  stage: test
+  script: echo test
+  only:
+    - merge_request
+
+deploy:
+  stage: deploy
+  script: echo deploy
+  only:
+    - master
+```
+
 ### Variables
 
 Gitlab CI offers you lots of usable variables like:
