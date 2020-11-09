@@ -459,22 +459,28 @@ stages:
 build_A:
   stage: build
   script: mkdir -p out && echo '<h1>Hello from Project A!</h1>' > out/index.html
-  artifacts: { paths: [out] }
+  artifacts:
+    paths:
+      - out
 
 build_B:
   stage: build
   script: mkdir -p out && echo '<h1>Hello from Project B!</h1>' > out/index.html
-  artifacts: { paths: [out] }
+  artifacts:
+    paths:
+      - out
 
 test A:
   stage: test
   script: cat out/index.html
-  dependencies: [build_A]
+  dependencies:
+    - build_A
 
 test B:
   stage: test
   script: cat out/index.html
-  dependencies: [build_B]
+  dependencies:
+    - build_B
 ```
 
 Or you can use dependencies when you have lots of artifact and dont want to slow down your jobs by downloading unnecessary artifacts.
