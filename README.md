@@ -89,7 +89,7 @@ How to install & configure:
 - https://docs.gitlab.com/runner/install/
 - https://docs.gitlab.com/runner/register/
 
-My scripts to bootstrap Gitlab Runner in Docker: https://github.com/ondrejsika/gitlab-ci-runner
+My scripts to bootstrap Gitlab Runner in Docker: https://github.com/ondrejsika/ondrejsika-gitlab-runner
 
 ## Setup Gitlab CI
 
@@ -120,8 +120,8 @@ ssh root@runner.sikademo.com
 ```
 
 ```
-git clone https://github.com/ondrejsika/gitlab-ci-runner
-cd gitlab-ci-runner
+git clone https://github.com/ondrejsika/ondrejsika-gitlab-runner
+cd ondrejsika-gitlab-runner
 ./create-runner.sh
 ./register-runner.sh https://gitlab.sikademo.com/ TV7jbPKGN53Z_7ruRXjQ
 ./set-concurrency.sh
@@ -509,7 +509,7 @@ test:
 - Easiest way how to create build environment
 - Easiest way how to run and distribute your software
 
-If you have a Docker or Kubernetes executor ([we have](https://github.com/ondrejsika/gitlab-ci-runner/blob/master/register-runner.sh#L12)) you can define image where you want to run your job.
+If you have a Docker or Kubernetes executor ([we have](https://github.com/ondrejsika/ondrejsika-gitlab-runner/blob/master/register-runner.sh#L12)) you can define image where you want to run your job.
 
 You can specify image globally or in job:
 
@@ -529,8 +529,8 @@ deploy:
     - kubectl apply -f kubernetes.yml
 ```
 
-You can also run docker commands from job because we have added Docker socket there. See [here](https://github.com/ondrejsika/gitlab-ci-runner/blob/master/create-runner.sh#L6)
-and [here](https://github.com/ondrejsika/gitlab-ci-runner/blob/master/register-runner.sh#L14).
+You can also run docker commands from job because we have added Docker socket there. See [here](https://github.com/ondrejsika/ondrejsika-gitlab-runner/blob/master/create-runner.sh#L6)
+and [here](https://github.com/ondrejsika/ondrejsika-gitlab-runner/blob/master/register-runner.sh#L14).
 
 ```yaml
 # .gitlab-ci.yml
@@ -787,7 +787,7 @@ release mac:
 
 ## Resources
 
-- Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/gitlab-ci-runner>
+- Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/ondrejsika-gitlab-runner>
 - Gitlab on Digital Ocean using Terraform - <https://github.com/ondrejsika/terraform-demo-gitlab>
 - `ondrejsika/ci` Docker image - <https://github.com/ondrejsika/ondrejsika-ci-docker>
 - [Traefik](https://traefik.io) (proxy) with Let's Encrypt - <https://github.com/ondrejsika/traefik-le>
