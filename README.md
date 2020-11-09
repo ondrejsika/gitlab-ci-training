@@ -635,6 +635,38 @@ stop:
     action: stop
 ```
 
+### Includes
+
+[Docs](https://docs.gitlab.com/ee/ci/yaml/#include)
+
+```yaml
+# .gitlab-ci.yml
+
+stages:
+  - build
+  - deploy
+
+include:
+  - .gitlab-ci-build.yml
+  - .gitlab-ci-deploy.yml
+```
+
+```yaml
+# .gitlab-ci-build.yml
+
+build:
+  stage: build
+  script: echo build
+```
+
+```yaml
+# .gitlab-ci-deploy.yml
+
+deploy:
+  stage: deploy
+  script: echo deploy
+```
+
 ### Child Pipelines
 
 [Docs](https://docs.gitlab.com/ce/ci/parent_child_pipelines.html)
