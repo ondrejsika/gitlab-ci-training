@@ -800,8 +800,8 @@ triger-pipelines:
 
 ### Needs - Directed Acyclic Graph
 
-[Docs (DAG)](https://docs.gitlab.com/ee/ci/directed_acyclic_graph/index.html)
-[Docs (Needs)](https://docs.gitlab.com/ee/ci/yaml/#needs)
+- [Docs (DAG)](https://docs.gitlab.com/ee/ci/directed_acyclic_graph/index.html)
+- [Docs (Needs)](https://docs.gitlab.com/ee/ci/yaml/#needs)
 
 ```yaml
 # .gitlab-ci.yml
