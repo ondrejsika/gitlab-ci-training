@@ -350,7 +350,7 @@ Build B:
 ```
 
 - Example monorepo with only changes - <https://github.com/ondrejsika/ondrejsikawebs>
-- Full Reference - <https://docs.gitlab.com/ce/ci/yaml/README.html#onlychangesexceptchanges>
+- Full Reference - <https://docs.gitlab.com/ce/ci/yaml/index.html#onlychanges--exceptchanges>
 
 ### Merge Request Pipelines
 
