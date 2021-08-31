@@ -291,17 +291,40 @@ You can specify another condition when you can run jobs. You can specify branche
 ```yaml
 # .gitlab-ci.yml
 
-test1:
-  script: echo Test1 ...
-  # use regexp
-  only:
-    - /^issue-.*$/
+stages:
+  - unit_test
+  - integration_test
+  - build
+  - deploy
 
-test2:
-  script: echo Test2 ...
-  # use special keyword
-  except:
+unit_test:
+  stage: unit_test
+  script: echo Unit Test ...
+  only:
     - branches
+    - tags
+    - merge_requests
+
+integration_test:
+  stage: integration_test
+  script: echo Integration Test ...
+  only:
+    - merge_requests
+
+build:
+  stage: build
+  script: echo Build ...
+  only:
+    - main
+    - tags
+
+deploy:
+  stage: deploy
+  script: echo Deploy ...
+  only:
+    - tags
+  when: manual
+  allow_failure: false
 ```
 
 Full reference here - <https://docs.gitlab.com/ce/ci/yaml/index.html#only--except>
