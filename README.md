@@ -228,18 +228,31 @@ You can control when do you want run your jobs. By default, jobs are executed au
 ```yaml
 # .gitlab-ci.yml
 
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script: echo Run build ...
+  # script: echo Run build ... && false
+
 test:
+  stage: test
   script: echo Run test ...
 
 deploy:
+  stage: test
   script: echo Run deploy ...
   when: manual
 
 diagnostics:
+  stage: test
   script: echo Run diagnostics ...
   when: on_failure
 
 reporting:
+  stage: test
   script: echo Run CI reporting ...
   when: always
 ```
