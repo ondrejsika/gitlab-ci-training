@@ -304,7 +304,7 @@ test2:
     - branches
 ```
 
-Full reference here - <https://docs.gitlab.com/ce/ci/yaml/README.html#onlyexcept-basic>
+Full reference here - <https://docs.gitlab.com/ce/ci/yaml/index.html#only--except>
 
 #### Only Changes
 
