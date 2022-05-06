@@ -460,16 +460,17 @@ More about caches: <https://docs.gitlab.com/ce/ci/caching/index.html>
 
 Instead of cache, you can use faster option how to keep some data in repository. If you are using cache, your repository is cleaned by `git clean -ffdx`, which means remove all ignored & untracked files and directories. Then your cache is downloaded and extracted into your working directory. This way is not fastest way if you have thousands files in cache (like node modules, for example).
 
-Instead of cache, you can specify variable `GIT_CLEAN_FLAGS` and use own git clean arguments. If you want to ignore node modules from git clean, you can set `-ffdx -e node_modules`.
+Instead of cache, you can specify variable `GIT_CLEAN_FLAGS` and use own git clean arguments. If you want to ignore node modules from git clean, you can set `-ffdx -e .yarn-cache`.
 
 ```yaml
 # .gitlab-ci.yml
 
+variables:
+  GIT_CLEAN_FLAGS: -ffdx -e .yarn-cache
+
 job:
-  variables:
-    GIT_CLEAN_FLAGS: -ffdx -e node_modules
   script:
-    - yarn
+    - yarn install --frozen-lockfile --cache-folder .yarn-cache --prefer-offline
     - yarn build
 ```
 
