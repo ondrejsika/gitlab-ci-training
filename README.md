@@ -120,8 +120,8 @@ ssh root@runner.sikademo.com
 ```
 
 ```
-git clone https://github.com/ondrejsika/ondrejsika-gitlab-runner
-cd ondrejsika-gitlab-runner
+git clone https://github.com/sikalabs/sikalabs-gitlab-runner
+cd sikalabs-gitlab-runner
 ./create-runner.sh
 ./register-runner.sh https://gitlab.sikademo.com/ TV7jbPKGN53Z_7ruRXjQ
 ./set-concurrency.sh
