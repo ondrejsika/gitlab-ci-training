@@ -113,7 +113,24 @@ Go to [**Admin** -> **Runners**](https://gitlab.sikademo.com/admin/runners)
 
 And **Set up a shared Runner manually**
 
-#### Setup our runner
+### Setup Gitlab Runner using `slu`
+
+```
+ssh root@runner.sikademo.com
+```
+
+Install slu
+
+```
+curl -fsSL https://ins.oxs.cz/slu-linux-amd64.sh | sudo sh
+```
+
+```
+slu login --url https://vault-slu.sikalabs.io --user gitlab-ci-sikademo --password gitlab-ci-sikademo
+slu gitlab-ci setup-runner --gitlab sikademo
+```
+
+#### [DEPRECATED] Setup runner by shell scripts
 
 ```
 ssh root@runner.sikademo.com
