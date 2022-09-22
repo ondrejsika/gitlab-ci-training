@@ -346,7 +346,7 @@ deploy:
 
 Full reference here - <https://docs.gitlab.com/ce/ci/yaml/index.html#only--except>
 
-#### Only Changes
+#### Rules Changes
 
 You can run job when are changes is some files. That's great for monorepos.
 
@@ -355,15 +355,15 @@ You can run job when are changes is some files. That's great for monorepos.
 
 Build A:
   script: echo Cuild A ...
-  only:
-    changes:
-      - a/**
+  rules:
+    - changes:
+        - a/**
 
 Build B:
   script: echo Cuild B ...
-  only:
-    changes:
-      - b/**
+  rules:
+    - changes:
+        - b/**
 ```
 
 - Example monorepo with only changes - <https://github.com/ondrejsika/ondrejsikawebs>
