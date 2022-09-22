@@ -380,21 +380,21 @@ stages:
 build:
   stage: build
   script: echo build
-  only:
-    - branches
-    - merge_request
+  rules:
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_MERGE_REQUEST_ID
 
 test:
   stage: test
   script: echo test
-  only:
-    - merge_request
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
 
 deploy:
   stage: deploy
   script: echo deploy
-  only:
-    - master
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 ```
 
 ### Variables
