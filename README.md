@@ -301,6 +301,59 @@ test2:
   allow_failure: false
 ```
 
+### Variables
+
+Gitlab CI offers you lots of usable variables like:
+
+- `CI`
+- `CI_PROJECT_NAME`, `CI_PROJECT_PATH_SLUG`
+- `CI_COMMIT_REF_NAME`, `CI_COMMIT_REF_SLUG`
+- `CI_COMMIT_SHA`, `CI_COMMIT_TAG`
+- `CI_PIPELINE_ID`, `CI_JOB_ID`
+- `CI_REGISTRY`, `CI_REGISTRY_USER`, `CI_REGISTRY_PASSWORD`
+
+See all varibles: <https://docs.gitlab.com/ce/ci/variables/predefined_variables.html#variables-reference>
+
+You can define own variables in:
+
+- Group CI Settings
+- Project CI Setting
+- Globally in CI YAML
+- In job in CI YAML
+
+You can define varible in **Settings -> CI / CD -> Variables**. Same for project and group. You can define for example connection to your Kubernetes cluster, AWS credentials, ...
+
+Variables can be defined as:
+
+- **Masked** - Value is hidden from the CI output. You probably dont want to show any credential, even development one.
+- **Protected** - Protected variable appears only in jobs on protected branches. If developers can't push to protected branches, there have no chance to get production deployment keys or deploy to production. After code has been merged to master (protected), then protected variables appears and you can deploy to production.
+
+Example job:
+
+```yaml
+# .gitlab-ci.yml
+
+variables:
+  XXX_GLOBAL: global
+
+job1:
+  script: env | grep XXX
+
+job2:
+  variables:
+    XXX_LOCAL: local
+  script: env | grep XXX
+```
+
+You can also create variables from variables, but you can't use varible defined in same place. If you create global variabl, you can use only CI default variables and custom variables setted up in project or group CI settings.
+
+```yaml
+# .gitlab-ci.yml
+
+variables:
+  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+```
+
 #### Rules
 
 - https://docs.gitlab.com/ee/ci/yaml/index.html#rules
@@ -392,59 +445,6 @@ deploy:
   script: echo deploy
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-```
-
-### Variables
-
-Gitlab CI offers you lots of usable variables like:
-
-- `CI`
-- `CI_PROJECT_NAME`, `CI_PROJECT_PATH_SLUG`
-- `CI_COMMIT_REF_NAME`, `CI_COMMIT_REF_SLUG`
-- `CI_COMMIT_SHA`, `CI_COMMIT_TAG`
-- `CI_PIPELINE_ID`, `CI_JOB_ID`
-- `CI_REGISTRY`, `CI_REGISTRY_USER`, `CI_REGISTRY_PASSWORD`
-
-See all varibles: <https://docs.gitlab.com/ce/ci/variables/predefined_variables.html#variables-reference>
-
-You can define own variables in:
-
-- Group CI Settings
-- Project CI Setting
-- Globally in CI YAML
-- In job in CI YAML
-
-You can define varible in **Settings -> CI / CD -> Variables**. Same for project and group. You can define for example connection to your Kubernetes cluster, AWS credentials, ...
-
-Variables can be defined as:
-
-- **Masked** - Value is hidden from the CI output. You probably dont want to show any credential, even development one.
-- **Protected** - Protected variable appears only in jobs on protected branches. If developers can't push to protected branches, there have no chance to get production deployment keys or deploy to production. After code has been merged to master (protected), then protected variables appears and you can deploy to production.
-
-Example job:
-
-```yaml
-# .gitlab-ci.yml
-
-variables:
-  XXX_GLOBAL: global
-
-job1:
-  script: env | grep XXX
-
-job2:
-  variables:
-    XXX_LOCAL: local
-  script: env | grep XXX
-```
-
-You can also create variables from variables, but you can't use varible defined in same place. If you create global variabl, you can use only CI default variables and custom variables setted up in project or group CI settings.
-
-```yaml
-# .gitlab-ci.yml
-
-variables:
-  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
 ```
 
 ### Cache
