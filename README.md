@@ -365,6 +365,13 @@ job2:
   variables:
     XXX_LOCAL: local
   script: env | grep XXX
+
+job3:
+  variables:
+    XXX_FOO: foo
+    XXX_BAR: bar
+    XXX_FOO_BAR: $XXX_FOO-$XXX_BAR
+  script: env | grep XXX
 ```
 
 You can also create variables from variables, but you can't use varible defined in same place. If you create global variabl, you can use only CI default variables and custom variables setted up in project or group CI settings.
