@@ -679,11 +679,15 @@ If environment is specified and no environment under that name exists, a new one
 ```yaml
 # .gitlab-ci.yml
 
+variables:
+  BASE_HOST: dev.company.com
+  HOST: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.$BASE_HOST
+
 deploy:
   script: echo 'Deploy!'
   environment:
     name: $CI_COMMIT_REF_SLUG
-    url: https://$CI_COMMIT_REF_SLUG.dev.company.com
+    url: https://$HOST
 ```
 
 #### Stop Environmet
