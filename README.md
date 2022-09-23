@@ -301,7 +301,7 @@ test2:
   allow_failure: false
 ```
 
-#### Only & Except
+#### Rules
 
 You can specify another condition when you can run jobs. You can specify branches and tags on which you want to run your jobs or not.
 
@@ -317,31 +317,31 @@ stages:
 unit_test:
   stage: unit_test
   script: echo Unit Test ...
-  only:
-    - branches
-    - tags
-    - merge_requests
+  rules:
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_COMMIT_TAG
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 integration_test:
   stage: integration_test
   script: echo Integration Test ...
-  only:
-    - merge_requests
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
 
 build:
   stage: build
   script: echo Build ...
-  only:
-    - main
-    - tags
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_TAG
 
 deploy:
   stage: deploy
   script: echo Deploy ...
-  only:
-    - tags
-  when: manual
-  allow_failure: false
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: manual
+      allow_failure: false
 ```
 
 Full reference here - <https://docs.gitlab.com/ce/ci/yaml/index.html#only--except>
