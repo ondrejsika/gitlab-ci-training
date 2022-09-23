@@ -659,7 +659,7 @@ You can specify image globally or in job:
 ```yaml
 # .gitlab-ci.yml
 
-image: ondrejsika/ci
+image: sikalabs/ci
 
 build:
   image: node
@@ -685,13 +685,13 @@ job:
     - docker push $CI_REGISTRY_IMAGE
 ```
 
-### Docker Image `ondrejsika/ci`
+### Docker Image `sikalabs/ci`
 
 That is my image which I use for most of CI jobs.
 
 It contains lots of common tools like git, zip, curl, wget, Docker client, Docker Compose, Kubernetes client, ...
 
-You can see the repository on Github - <https://github.com/ondrejsika/ondrejsika-ci-docker>
+You can see the repository on Github - <https://github.com/sikalabs/sikalabs-container-images/tree/master/ci>
 
 #### Pass Environment Variables to Docker
 
@@ -997,7 +997,7 @@ release mac:
 
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/ondrejsika-gitlab-runner>
 - Gitlab on Digital Ocean using Terraform - <https://github.com/ondrejsika/terraform-demo-gitlab>
-- `ondrejsika/ci` Docker image - <https://github.com/ondrejsika/ondrejsika-ci-docker>
+- `sikalabs/ci` Docker image - <https://github.com/sikalabs/sikalabs-container-images/tree/master/ci>
 - [Traefik](https://traefik.io) (proxy) with Let's Encrypt - <https://github.com/ondrejsika/traefik-le>
 
 Docs:
