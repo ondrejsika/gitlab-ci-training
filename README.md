@@ -727,21 +727,22 @@ deploy:
 
 ```yaml
 # .gitlab-ci.yml
+
 pipeline_a:
   trigger:
     include: a/.gitlab-ci.yml
     strategy: depend
-  only:
-    changes:
-      - a/**
+  rules:
+    - changes:
+        - a/**
 
 pipeline_b:
   trigger:
     include: b/.gitlab-ci.yml
     strategy: depend
-  only:
-    changes:
-      - b/**
+  rules:
+    - changes:
+        - b/**
 ```
 
 ```yaml
