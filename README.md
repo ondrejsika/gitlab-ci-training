@@ -238,6 +238,25 @@ job3:
   script: echo Job3!
 ```
 
+Cleanup after script
+
+```yaml
+# .gitlab-ci.yml
+
+job1:
+  script:
+    - echo deploy!
+    - echo test! && false
+    - echo cleanup!
+
+job2:
+  script:
+    - echo deploy!
+    - echo test! && false
+  after_script:
+    - echo cleanup!
+```
+
 #### When
 
 You can control when do you want run your jobs. By default, jobs are executed automatically when previous stage succeed. You can specify another condition, you can run jobs manually, always or on error.
