@@ -687,6 +687,20 @@ stop:
     action: stop
 ```
 
+#### Environment: Auto Stop In
+
+<https://docs.gitlab.com/ee/ci/yaml/#environmentauto_stop_in>
+
+```
+deploy_review:
+  script: echo Deploy for review!
+  environment:
+    name: $CI_COMMIT_REF_SLUG
+    url: https://$CI_COMMIT_REF_SLUG.dev.company.com
+    on_stop: stop_rewiew
+    auto_stop_in: 1 day
+```
+
 ### Includes
 
 [Docs](https://docs.gitlab.com/ee/ci/yaml/#include)
