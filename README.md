@@ -372,6 +372,16 @@ job3:
     XXX_BAR: bar
     XXX_FOO_BAR: $XXX_FOO-$XXX_BAR
   script: env | grep XXX
+
+job4:
+  variables:
+    TAG: $CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+    IMAGE: $CI_REGISTRY_IMAGE:$TAG
+    BASE_HOST: sikademo.com
+    HOST: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG.$BASE_HOST
+  script:
+    - echo docker build . -t $IMAGE
+    - echo helm install ... --set host=$HOST
 ```
 
 You can also create variables from variables, but you can't use varible defined in same place. If you create global variabl, you can use only CI default variables and custom variables setted up in project or group CI settings.
