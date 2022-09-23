@@ -274,6 +274,27 @@ reporting:
   when: always
 ```
 
+Example with following jobs after manual job
+
+```yaml
+stages:
+  - deploy prod
+  - test prod
+
+deploy prod:
+  stage: deploy prod
+  when: manual
+  allow_failure: false
+  # allow_failure: true
+  script:
+    - echo Deploy ...
+
+test prod:
+  stage: test prod
+  script:
+    - echo Test ...
+```
+
 #### Allow Failure
 
 You can specify flag `allow_failure` to `true`, job can fail but pipeline will succeed.
