@@ -303,6 +303,8 @@ test2:
 
 #### Rules
 
+- https://docs.gitlab.com/ee/ci/yaml/index.html#rules
+
 You can specify another condition when you can run jobs. You can specify branches and tags on which you want to run your jobs or not.
 
 ```yaml
@@ -344,8 +346,6 @@ deploy:
       allow_failure: false
 ```
 
-Full reference here - <https://docs.gitlab.com/ce/ci/yaml/index.html#only--except>
-
 #### Rules Changes
 
 You can run job when are changes is some files. That's great for monorepos.
@@ -365,9 +365,6 @@ Build B:
     - changes:
         - b/**
 ```
-
-- Example monorepo with only changes - <https://github.com/ondrejsika/ondrejsikawebs>
-- Full Reference - <https://docs.gitlab.com/ce/ci/yaml/index.html#onlychanges--exceptchanges>
 
 ### Merge Request Pipelines
 
