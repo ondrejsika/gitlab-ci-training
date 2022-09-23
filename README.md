@@ -722,6 +722,8 @@ deploy:
     on_stop: stop
 
 stop:
+  variables:
+    GIT_STRATEGY: none
   script: echo Stop!
   when: manual
   environment:
