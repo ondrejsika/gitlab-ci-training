@@ -661,6 +661,14 @@ When the job succed, you can browse and download job from Gitlab.
 
 More about artifacts: <https://docs.gitlab.com/ce/user/project/pipelines/job_artifacts.html>
 
+### Gitlab Pages
+
+Enable Gitlab Pages in `/etc/gitlab/gitlab.rb`
+
+```
+pages_external_url "http://pages.sikademo.com"
+```
+
 #### Artifacts Dependencies
 
 By default, all artifacts will be passed to jobs in following stages. If you want artifact only from specific jobs, you can use dependencies to choose which articact you want.
