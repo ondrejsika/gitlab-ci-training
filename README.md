@@ -216,6 +216,32 @@ test2:
   script: echo Test2!
 ```
 
+#### `.pre`, `.post` stages
+
+Default stages which runs before and after our user-defined stages. No need to specify them in `stages`.
+
+```yaml
+stages:
+  - build
+  - test
+
+pre:
+  stage: .pre
+  script: echo Pre ...
+
+build:
+  stage: build
+  script: echo Build!
+
+test:
+  stage: test
+  script: echo Test!
+
+post:
+  stage: .post
+  script: echo Post ...
+```
+
 #### Before & After Script
 
 You can define script which will be executed befor and after job script. You can define those script globally or per job.
