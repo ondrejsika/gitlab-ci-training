@@ -1046,6 +1046,44 @@ release mac:
     - mac e2e tests
 ```
 
+## Scheduled Pipelines
+
+You can schedule pipeline.
+
+```yaml
+nightly:
+  script: echo Nightly build ...
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+      when: never
+```
+
+## Schedule setting in `gitlab.rb`
+
+If you want to run scheduled pipelines in less than hour, you have to set custom `pipeline_schedule_worker_cron` in `/etc/gitlab/gitlab.rb`
+
+```ruby
+gitlab_rails['pipeline_schedule_worker_cron'] = "*/5 * * * *"
+```
+
+## Scheduled Pipelines using Terraform
+
+```terraform
+resource "gitlab_pipeline_schedule" "nightly" {
+  project     = local.project_id
+  description = "nightly builds"
+  ref         = "master"
+  cron        = "0 0 * * *"
+}
+
+resource "gitlab_pipeline_schedule_variable" "nightly" {
+  project              = gitlab_pipeline_schedule.nightly.project
+  pipeline_schedule_id = gitlab_pipeline_schedule.nightly.id
+  key                  = "NIGHTLY"
+  value                = "yes"
+}
+```
+
 ## Resources
 
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/ondrejsika-gitlab-runner>
