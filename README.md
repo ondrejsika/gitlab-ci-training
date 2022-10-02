@@ -257,6 +257,25 @@ job2:
     - echo cleanup!
 ```
 
+Job status in after script
+
+```yaml
+  script:
+    - echo deploy!
+    - echo test!
+  after_script:
+    - echo $CI_JOB_STATUS
+
+job2:
+  script:
+    - echo deploy!
+    - echo test! && false
+  after_script:
+    - echo $CI_JOB_STATUS
+```
+
+CI_JOB_STATUS
+
 #### When
 
 You can control when do you want run your jobs. By default, jobs are executed automatically when previous stage succeed. You can specify another condition, you can run jobs manually, always or on error.
@@ -352,6 +371,7 @@ Gitlab CI offers you lots of usable variables like:
 - `CI_COMMIT_TAG`, `CI_COMMIT_BRANCH`, `CI_DEFAULT_BRANCH`
 - `CI_PIPELINE_ID`, `CI_JOB_ID`
 - `CI_REGISTRY`, `CI_REGISTRY_USER`, `CI_REGISTRY_PASSWORD`
+- `CI_JOB_STATUS`
 
 See all varibles: <https://docs.gitlab.com/ce/ci/variables/predefined_variables.html#variables-reference>
 
