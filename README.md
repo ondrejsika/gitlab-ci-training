@@ -360,6 +360,26 @@ test2:
   allow_failure: false
 ```
 
+### Retry
+
+```
+# .gitlab-ci.yml
+
+image: sikalabs/ci
+
+test1:
+  script: '[ "$(slu random int --max 2)" == "0" ]'
+  retry: 2
+
+test2:
+  script: '[ "$(slu random int --max 2)" == "0" ]'
+  retry: 2
+
+test3:
+  script: '[ "$(slu random int --max 2)" == "0" ]'
+  retry: 2
+```
+
 ### Variables
 
 Gitlab CI offers you lots of usable variables like:
