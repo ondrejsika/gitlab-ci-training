@@ -424,6 +424,25 @@ job4:
     - echo helm install ... --set host=$HOST
 ```
 
+### Variables with Terraform
+
+You can manage project or group variables using Terraform.
+
+```terraform
+resource "gitlab_project_variable" "base_host" {
+  project  = local.project_id
+  key      = "BASE_HOST"
+  value    = "k8s.sikademo.com
+}
+```
+
+See example [./terraform-gitlab-ci-variables](./terraform-gitlab-ci-variables)
+
+- https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/project_variable
+- https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/group_variable
+
+You can manage entire Gitlab with Terraform ;)
+
 #### Rules
 
 - https://docs.gitlab.com/ee/ci/yaml/index.html#rules
