@@ -357,6 +357,7 @@ See all varibles: <https://docs.gitlab.com/ce/ci/variables/predefined_variables.
 
 You can define own variables in:
 
+- Predefined CI Variables
 - Group CI Settings
 - Project CI Setting
 - Globally in CI YAML
