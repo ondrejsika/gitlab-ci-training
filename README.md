@@ -562,6 +562,24 @@ Build B:
         - b/**
 ```
 
+#### If && Changes Together
+
+```yaml
+Build A:
+  script: echo Build A ...
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
+      changes:
+        - a/**/*
+
+Build B:
+  script: echo Build B ...
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
+      changes:
+        - b/**/*
+```
+
 ### Merge Request Pipelines
 
 ```yaml
