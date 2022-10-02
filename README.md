@@ -144,6 +144,10 @@ cd sikalabs-gitlab-runner
 ./set-concurrency.sh
 ```
 
+## Gitlab Workflow (CI) VS Code Extension
+
+<https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow>
+
 ## CI Jobs
 
 ### Gitlab CI YAML
