@@ -107,6 +107,10 @@ You can setup Gitlab on Digital Ocean & Cloudflare using Terraform
 - User - `demo`
 - Password - `asdfasdf`
 
+#### SSH Password
+
+Password is `asdfasdf1234` for both: Girlab on `root@gitlab.sikademo.com` and Runner on `root@runner.sikademo.com`
+
 ### Install Runners into Gitlab
 
 Go to [**Admin** -> **Runners**](https://gitlab.sikademo.com/admin/runners)
