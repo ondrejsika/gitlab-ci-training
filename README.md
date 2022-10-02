@@ -2,9 +2,6 @@
 
 # Gitlab CI Training
 
-    Ondrej Sika <ondrej@ondrejsika.com>
-    https://github.com/ondrejsika/gitlab-ci-training
-
 ## About Course
 
 - [Gitlab CI Training in Czech Republic](https://ondrej-sika.cz/skoleni/gitlab-ci?_s=gh-gitlab-ci-training)
