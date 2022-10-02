@@ -122,7 +122,7 @@ ssh root@runner.sikademo.com
 Install slu
 
 ```
-curl -fsSL https://ins.oxs.cz/slu-linux-amd64.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
 ```
 
 ```
