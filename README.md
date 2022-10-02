@@ -424,15 +424,6 @@ job4:
     - echo helm install ... --set host=$HOST
 ```
 
-You can also create variables from variables, but you can't use varible defined in same place. If you create global variabl, you can use only CI default variables and custom variables setted up in project or group CI settings.
-
-```yaml
-# .gitlab-ci.yml
-
-variables:
-  IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-```
-
 #### Rules
 
 - https://docs.gitlab.com/ee/ci/yaml/index.html#rules
