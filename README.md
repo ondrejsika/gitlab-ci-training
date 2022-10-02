@@ -669,6 +669,8 @@ Enable Gitlab Pages in `/etc/gitlab/gitlab.rb`
 pages_external_url "http://pages.sikademo.com"
 ```
 
+Gitlab pages MUST be on `http` (NOT `https`) or you have to provide wildcard certificate for `*.pages.sikademo.com`. See: <https://gitlab.com/gitlab-org/gitlab/-/issues/376130>
+
 #### Artifacts Dependencies
 
 By default, all artifacts will be passed to jobs in following stages. If you want artifact only from specific jobs, you can use dependencies to choose which articact you want.
