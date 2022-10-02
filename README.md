@@ -1003,6 +1003,7 @@ release linux:
   stage: deploy
   script: "echo Done"
   needs:
+    - lint
     - linux unit tests
     - linux e2e tests
 
@@ -1010,6 +1011,7 @@ release mac:
   stage: deploy
   script: "echo Done"
   needs:
+    - lint
     - mac unit tests
     - mac e2e tests
 ```
