@@ -358,6 +358,7 @@ job2:
 Job status in after script
 
 ```yaml
+job1:
   script:
     - echo deploy!
     - echo test!
