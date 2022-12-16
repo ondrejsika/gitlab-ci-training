@@ -13,3 +13,4 @@ __pycache__
 .terraform.tfstate.lock.info
 *.tfvars
 !*.EXAMPLE.tfvars
+.infracost
