@@ -602,9 +602,10 @@ deploy:
   stage: deploy
   script: echo Deploy ...
   rules:
-    - if: $CI_COMMIT_TAG
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       when: manual
       allow_failure: false
+    - if: $CI_COMMIT_TAG
 ```
 
 #### Rules Changes
