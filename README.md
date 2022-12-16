@@ -461,7 +461,7 @@ test2:
 
 ### Retry
 
-```
+```yaml
 # .gitlab-ci.yml
 
 image: sikalabs/ci
