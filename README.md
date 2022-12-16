@@ -616,13 +616,13 @@ You can run job when are changes is some files. That's great for monorepos.
 # .gitlab-ci.yml
 
 Build A:
-  script: echo Cuild A ...
+  script: echo Build A ...
   rules:
     - changes:
         - a/**
 
 Build B:
-  script: echo Cuild B ...
+  script: echo Build B ...
   rules:
     - changes:
         - b/**
