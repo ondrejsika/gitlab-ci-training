@@ -141,7 +141,7 @@ ssh root@runner.sikademo.com
 git clone https://github.com/sikalabs/sikalabs-gitlab-runner
 cd sikalabs-gitlab-runner
 ./create-runner.sh
-./register-runner.sh https://gitlab.sikademo.com/ TV7jbPKGN53Z_7ruRXjQ
+./register-runner.sh https://gitlab.sikademo.com/ h94VrzQzZnJ_va3hxGGW
 ./set-concurrency.sh
 ```
 
@@ -1169,6 +1169,34 @@ resource "gitlab_pipeline_schedule_variable" "nightly" {
   key                  = "NIGHTLY"
   value                = "yes"
 }
+```
+
+## Gitlab Runner in Kubernetes using Operator and Helm
+
+Using [sikalabs/gitlab-runner](https://github.com/sikalabs/charts/tree/master/charts/gitlab-runner) chart.
+
+Install OLM
+
+```bash
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.23.1/install.sh | bash -s v0.23.1
+```
+
+Install Gitlab Runner Operator
+
+```bash
+kubectl create -f https://operatorhub.io/install/gitlab-runner-operator.yaml
+```
+
+Create Runner
+
+```
+helm upgrade --install \
+  gitlab-runner \
+  --repo https://helm.sikalabs.io gitlab-runner \
+  --namespace gitlab-runner \
+  --create-namespace \
+  --set gitlabUrl=https://gitlab.sikademo.com \
+  --set runnerRegistrationToken=h94VrzQzZnJ_va3hxGGW
 ```
 
 ## Resources
