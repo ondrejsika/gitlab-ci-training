@@ -911,6 +911,43 @@ job:
       --cache-repo $CI_REGISTRY_IMAGE/cache
 ```
 
+### matrix
+
+```yaml
+# .gitlab-ci.yml
+
+image: golang:1.19
+
+build:
+  parallel:
+    matrix:
+      - GOOS:
+          - linux
+          - darwin
+          - windows
+        GOARCH:
+          - amd64
+          - arm64
+          - x86
+  artifacts:
+    paths:
+      - hello-${GOOS}-${GOARCH}
+  script:
+    - go build -o hello-${GOOS}-${GOARCH} main.go
+```
+
+```go
+// main.go
+
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello World")
+}
+```
+
 ### Environments
 
 Environment is used to define that a job deploys to a specific environment.
