@@ -1269,6 +1269,10 @@ helm upgrade --install \
   --set runnerRegistrationToken=h94VrzQzZnJ_va3hxGGW
 ```
 
+## Gitlab Feature Flags
+
+See example in [ondrejsika/golang-examples](https://github.com/ondrejsika/golang-examples/tree/master/gitlab_feature_flags_example).
+
 ## Resources
 
 - Gitlab CI Runner Setup (in Docker) - <https://github.com/ondrejsika/ondrejsika-gitlab-runner>
