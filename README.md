@@ -193,6 +193,24 @@ job2:
     - echo Ahoj Svete!
 ```
 
+#### Tags
+
+You can choose specific set of runners to execute the job
+
+```yaml
+# .gitlab-ci.yml
+
+build:
+  tags:
+    - build
+  script: echo Build!
+
+deploy:
+  tags:
+    - kubernetes
+  script: echo Deploy!
+```
+
 #### Stages
 
 You can define order of jobs by stages. You can define stages and their order. Jobs in same stage run in parallel and after CI finishes all job in stage, then start jobs from next.
