@@ -1006,6 +1006,39 @@ deploy_review:
     auto_stop_in: 1 day
 ```
 
+### Extends
+
+```yaml
+# .gitlab-ci.yml
+
+stages:
+  - deploy dev
+  - deploy prod
+
+.dev:
+  stage: deploy dev
+  variables:
+    ENV: dev
+
+.prod:
+  stage: deploy prod
+  variables:
+    ENV: prod
+
+.deploy:
+  script: echo Deploy $ENV
+
+deploy dev:
+  extends:
+    - .deploy
+    - .dev
+
+deploy prod:
+  extends:
+    - .deploy
+    - .prod
+```
+
 ### Includes
 
 [Docs](https://docs.gitlab.com/ee/ci/yaml/#include)
