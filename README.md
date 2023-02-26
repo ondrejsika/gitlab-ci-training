@@ -872,6 +872,27 @@ It contains lots of common tools like git, zip, curl, wget, Docker client, Docke
 
 You can see the repository on Github - <https://github.com/sikalabs/sikalabs-container-images/tree/master/ci>
 
+### Kaniko
+
+```yaml
+variables:
+  GIT_CLEAN_FLAGS: -ffdx -e .kaniko-cache
+
+job:
+  image:
+    name: gcr.io/kaniko-project/executor:v1.9.0-debug
+    entrypoint: [""]
+  script:
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor
+      --context .
+      --dockerfile ./Dockerfile
+      --destination $CI_REGISTRY_IMAGE
+      --cache=true
+      --cache-dir .kaniko-cache
+      --cache-repo $CI_REGISTRY_IMAGE/cache
+```
+
 ### Environments
 
 Environment is used to define that a job deploys to a specific environment.
