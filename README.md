@@ -872,19 +872,6 @@ It contains lots of common tools like git, zip, curl, wget, Docker client, Docke
 
 You can see the repository on Github - <https://github.com/sikalabs/sikalabs-container-images/tree/master/ci>
 
-#### Pass Environment Variables to Docker
-
-If you want to run Docker container and pass there all environment variables, you can use this:
-
-```yaml
-# .gitlab-ci.yml
-
-job:
-  script:
-    - env > .env
-    - docker run --rm --env-file .env debian env
-```
-
 ### Environments
 
 Environment is used to define that a job deploys to a specific environment.
