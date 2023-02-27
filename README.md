@@ -1309,3 +1309,10 @@ Please, tweet something with `@ondrejsika`. Thanks :)
 ### Next time?
 
 Wanna to go for a beer or do some work together? Just [book me](https://book-me.sika.io) :)
+
+## Training Sessions
+
+#### 2023-02-27 Siemens
+
+- project - https://github.com/sika-training-examples/2023-02-27--siemens--example-project
+- examples - https://github.com/sika-training-examples/-2023-02-27--siemens--examples
