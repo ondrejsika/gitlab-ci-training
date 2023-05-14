@@ -655,35 +655,35 @@ You can run job when are changes is some files. That's great for monorepos.
 ```yaml
 # .gitlab-ci.yml
 
-Build A:
-  script: echo Build A ...
+Build Frontend:
+  script: echo Build Frontend ...
   rules:
     - changes:
-        - a/**
+        - frontend/**
 
-Build B:
-  script: echo Build B ...
+Build Backend:
+  script: echo Build Backend ...
   rules:
     - changes:
-        - b/**
+        - backed/**
 ```
 
 #### If && Changes Together
 
 ```yaml
-Build A:
-  script: echo Build A ...
+Build Frontend:
+  script: echo Build Frontend ...
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
       changes:
-        - a/**/*
+        - frontend/**/*
 
-Build B:
-  script: echo Build B ...
+Build Backend:
+  script: echo Build Backend ...
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_MERGE_REQUEST_ID
       changes:
-        - b/**/*
+        - backend/**/*
 ```
 
 ### Merge Request Pipelines
