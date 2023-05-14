@@ -714,6 +714,22 @@ deploy:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 ```
 
+### Workflow
+
+- https://docs.gitlab.com/ee/ci/yaml/#workflow
+- https://docs.gitlab.com/ee/ci/yaml/workflow.html
+
+### Workflow Name
+
+- https://docs.gitlab.com/ee/ci/yaml/#workflowname
+
+```yaml
+# .gitlab-ci.yml
+
+workflow:
+  name: Pipeline $CI_COMMIT_REF_NAME $CI_COMMIT_SHORT_SHA $CI_COMMIT_TITLE
+```
+
 ### Cache
 
 Cache is used to specify a list of files and directories which should be cached between jobs. You can only use paths that are within the project workspace.
