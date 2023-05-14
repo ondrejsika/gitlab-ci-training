@@ -588,6 +588,26 @@ You can manage entire Gitlab with Terraform ;)
 
 You can specify another condition when you can run jobs. You can specify branches and tags on which you want to run your jobs or not.
 
+Simple example:
+
+```yaml
+# .gitlab-ci.yml
+
+push:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+  script:
+    - echo push
+
+run:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+  script:
+    - echo run
+```
+
+More advanced example:
+
 ```yaml
 # .gitlab-ci.yml
 
