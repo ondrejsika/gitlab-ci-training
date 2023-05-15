@@ -1350,6 +1350,11 @@ Wanna to go for a beer or do some work together? Just [book me](https://book-me.
 
 ## Training Sessions
 
+#### 2023-05-15 Tieto
+
+- step by step examples - https://github.com/sika-training-examples/2023-05-15-gitlab-ci-tieto--step-by-step
+- example project - https://github.com/sika-training-examples/2023-05-15-gitlab-ci-tieto--example-go-project
+
 #### 2023-02-27 Siemens
 
 - project - https://github.com/sika-training-examples/2023-02-27--siemens--example-project
