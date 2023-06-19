@@ -1350,6 +1350,15 @@ Wanna to go for a beer or do some work together? Just [book me](https://book-me.
 
 ## Training Sessions
 
+#### 2023-06-19
+
+- step by step example
+  - SikaLabs Gitlab - https://gitlab.sikalabs.com/examples/training-2023-06-19/ondrejsika-steb-by-step
+  - Github - https://github.com/sika-training-examples/2023-06-19--gitlab-ci--steb-by-step
+- example pipeline
+  - SikaLabs Gitlab - https://gitlab.sikalabs.com/examples/training-2023-06-19/ondrejsika-example-pipeline
+  - Github - https://github.com/sika-training-examples/2023-06-19--gitlab-ci--example-pipeline
+
 #### 2023-05-15 Tieto
 
 - step by step examples - https://github.com/sika-training-examples/2023-05-15-gitlab-ci-tieto--step-by-step
