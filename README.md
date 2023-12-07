@@ -159,7 +159,7 @@ Configuration of everything aroud Gitlab CI is stored inside Git repository in f
 
 If you don't know YAML format, check out this simple YAML tutorial - <https://learnxinyminutes.com/docs/yaml/>
 
-Here is a Gitlab CI YAML reference - <https://docs.gitlab.com/ce/ci/yaml/README.html>
+Here is a Gitlab CI YAML reference - <https://docs.gitlab.com/ee/ci/yaml/>
 
 ### First Job
 
