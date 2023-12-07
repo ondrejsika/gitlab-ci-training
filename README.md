@@ -677,7 +677,7 @@ Build Backend:
   script: echo Build Backend ...
   rules:
     - changes:
-        - backed/**
+        - backend/**
 ```
 
 #### If && Changes Together
