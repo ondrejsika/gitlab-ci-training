@@ -497,6 +497,18 @@ test2:
 test3:
   script: '[ "$(slu random int --max 2)" == "0" ]'
   retry: 2
+
+test4:
+  script: slu chaos-monkey random-status-code
+  retry: 2
+
+test5:
+  script: slu chaos-monkey random-status-code
+  retry: 2
+
+test6:
+  script: slu chaos-monkey random-status-code
+  retry: 2
 ```
 
 ### Variables
