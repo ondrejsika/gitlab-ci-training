@@ -945,6 +945,8 @@ You can see the repository on Github - <https://github.com/sikalabs/sikalabs-con
 ```yaml
 variables:
   GIT_CLEAN_FLAGS: -ffdx -e .kaniko-cache
+  TAG: $CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+  IMAGE: $CI_REGISTRY_IMAGE:$TAG
 
 job:
   image:
@@ -955,7 +957,7 @@ job:
     - /kaniko/executor
       --context .
       --dockerfile ./Dockerfile
-      --destination $CI_REGISTRY_IMAGE
+      --destination $IMAGE
       --cache=true
       --cache-dir .kaniko-cache
       --cache-repo $CI_REGISTRY_IMAGE/cache
