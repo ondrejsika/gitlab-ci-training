@@ -925,11 +925,15 @@ and [here](https://github.com/ondrejsika/ondrejsika-gitlab-runner/blob/master/re
 ```yaml
 # .gitlab-ci.yml
 
+variables:
+  TAG: $CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA-$CI_PIPELINE_ID
+  IMAGE: $CI_REGISTRY_IMAGE:$TAG
+
 job:
   script:
     - docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
-    - docker build -t $CI_REGISTRY_IMAGE .
-    - docker push $CI_REGISTRY_IMAGE
+    - docker build -t $IMAGE .
+    - docker push $IMAGE
 ```
 
 ### Docker Image `sikalabs/ci`
