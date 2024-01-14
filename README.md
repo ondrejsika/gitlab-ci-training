@@ -954,7 +954,7 @@ variables:
 
 job:
   image:
-    name: gcr.io/kaniko-project/executor:v1.9.0-debug
+    name: gcr.io/kaniko-project/executor:v1.19.2-debug
     entrypoint: [""]
   script:
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
