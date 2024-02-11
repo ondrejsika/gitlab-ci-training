@@ -30,6 +30,12 @@ If you found bug, create issue or pull request.
 
 Also feel free to propose improvements by creating issues.
 
+## DevOps Live (Czech only)
+
+[![](./images/devopslive_argocd.jpg)](https://devopslive.cz)
+
+<https://devopslive.cz>
+
 ## DevOps Kniha (Czech only)
 
 [![](./images/devops_kniha.jpg)](https://kniha.sika.io)
