@@ -974,7 +974,7 @@ job:
 ```yaml
 # .gitlab-ci.yml
 
-image: golang:1.19
+image: golang:1.22-bullseye
 
 build:
   parallel:
