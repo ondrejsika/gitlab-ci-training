@@ -1294,7 +1294,7 @@ plan:
   artifacts:
     name: plan
     paths:
-      - ${TF_ROOT}/plan.tfplan
+      - ${TF_ROOT}/plan.cache
     reports:
       terraform: ${TF_ROOT}/plan.json
 
