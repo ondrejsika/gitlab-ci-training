@@ -30,6 +30,12 @@ If you found bug, create issue or pull request.
 
 Also feel free to propose improvements by creating issues.
 
+## DevOps Kniha (Czech only)
+
+[![](./images/devops_kniha.jpg)](https://kniha.sika.io)
+
+<https://kniha.sika.io>
+
 ### Chat
 
 For sharing links & "secrets".
