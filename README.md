@@ -986,7 +986,6 @@ build:
         GOARCH:
           - amd64
           - arm64
-          - x86
   artifacts:
     paths:
       - hello-${GOOS}-${GOARCH}
