@@ -77,7 +77,7 @@ Automatization of:
 
 ### Gitlab CI Architecture
 
-![gitlab-ci-architecture](./gitlab-ci-architecture.png)
+![gitlab-ci-architecture](./images/gitlab-ci-architecture.png)
 
 ### Gitlab Runner
 
