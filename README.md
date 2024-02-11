@@ -871,7 +871,7 @@ Or you can use dependencies when you have lots of artifact and dont want to slow
 
 ### JUnit Test Reports
 
-[Docs](https://docs.gitlab.com/ee/ci/unit_test_reports.html)
+[Docs](https://docs.gitlab.com/ee/ci/testing/unit_test_reports.html)
 
 ```python
 # test_example.py
