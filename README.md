@@ -1305,6 +1305,7 @@ apply:
   dependencies:
     - plan
   when: manual
+  allow_failure: false
   only:
     - master
 ```
