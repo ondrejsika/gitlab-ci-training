@@ -1277,7 +1277,7 @@ triger-pipelines:
 ```yaml
 image: registry.gitlab.com/gitlab-org/terraform-images/stable:latest
 variables:
-  TF_ROOT: ${CI_PROJECT_DIR}/terraform
+  TF_ROOT: ${CI_PROJECT_DIR}
   TF_ADDRESS: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/terraform/state/${CI_PROJECT_NAME}
 
 cache:
