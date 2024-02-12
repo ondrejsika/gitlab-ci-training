@@ -1316,10 +1316,10 @@ apply:
     - gitlab-terraform apply
   dependencies:
     - plan
-  when: manual
-  allow_failure: false
-  only:
-    - master
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+      allow_failure: false
 ```
 
 Inspired by <https://gitlab.com/gitlab-org/configure/examples/gitlab-terraform-aws/-/blob/master/.gitlab-ci.yml>
