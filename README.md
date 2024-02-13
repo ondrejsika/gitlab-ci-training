@@ -511,15 +511,15 @@ test3:
   retry: 2
 
 test4:
-  script: slu chaos-monkey random-status-code
+  script: slu chaos-monkey random-status-code --verbose
   retry: 2
 
 test5:
-  script: slu chaos-monkey random-status-code
+  script: slu chaos-monkey random-status-code --verbose
   retry: 2
 
 test6:
-  script: slu chaos-monkey random-status-code
+  script: slu chaos-monkey random-status-code --verbose
   retry: 2
 ```
 
