@@ -140,9 +140,17 @@ Install slu
 curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
 ```
 
+From Vault
+
 ```
 slu login --url https://vault-slu.sikalabs.io --user gitlab-ci-sikademo --password gitlab-ci-sikademo
 slu gitlab-ci setup-runner --gitlab sikademo
+```
+
+From CLI arguments
+
+```
+slu gitlab-ci setup-runner --gitlab-url https://gitlab.sikademo.com --token <token>
 ```
 
 #### [DEPRECATED] Setup runner by shell scripts
