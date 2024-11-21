@@ -350,6 +350,23 @@ release mac:
     - mac e2e tests
 ```
 
+### Needs in same stage
+
+```yaml
+stages:
+  - test
+
+test1:
+  stage: test
+  script: echo Test1!
+
+test2:
+  stage: test
+  script: echo Test2!
+  needs:
+    - test1
+```
+
 #### Before & After Script
 
 You can define script which will be executed befor and after job script. You can define those script globally or per job.
