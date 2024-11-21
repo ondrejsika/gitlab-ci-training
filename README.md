@@ -1297,8 +1297,8 @@ before_script:
 
 stages:
   - validate
-  - build
-  - deploy
+  - plan
+  - apply
 
 validate:
   stage: validate
@@ -1307,7 +1307,7 @@ validate:
     - gitlab-terraform validate
 
 plan:
-  stage: build
+  stage: plan
   script:
     - gitlab-terraform plan
     - gitlab-terraform plan-json
@@ -1319,7 +1319,7 @@ plan:
       terraform: ${TF_ROOT}/plan.json
 
 apply:
-  stage: deploy
+  stage: apply
   script:
     - gitlab-terraform apply
   dependencies:
