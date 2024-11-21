@@ -1441,6 +1441,10 @@ Wanna to go for a beer or do some work together? Just [book me](https://book-me.
 
 ## Training Sessions
 
+#### 2024-11-21 O2
+
+- step by step examples - https://github.com/sika-training-examples/2024-11-21-o2-gitlab-ci-examples
+
 #### 2024-02-12 Alpiq
 
 - step by step example - https://github.com/sika-training-examples/2024-02-12-alpiq-step-by-step-example
