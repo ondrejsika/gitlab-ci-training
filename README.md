@@ -1398,6 +1398,17 @@ helm upgrade --install \
   --set runnerRegistrationToken=h94VrzQzZnJ_va3hxGGW
 ```
 
+## Git Tag from CI
+
+```yaml
+tag:
+  when: manual
+  script:
+    - slu git tag-next-calver
+    - git remote set-url origin https://token:$COMMIT_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git
+    - git push origin `slu git get-last-calver`
+```
+
 ## Gitlab Feature Flags
 
 See example in [ondrejsika/golang-examples](https://github.com/ondrejsika/golang-examples/tree/master/gitlab_feature_flags_example).
