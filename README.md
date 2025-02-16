@@ -1311,6 +1311,19 @@ triger-pipelines:
   trigger: ondrejsika/foo
 ```
 
+or
+
+```yaml
+# .gitlab-ci.yml (library bar)
+job:
+  script: Do something
+
+triger-pipelines:
+  trigger:
+    project: ondrejsika/foo
+    branch: $CI_COMMIT_REF_NAME%
+```
+
 ## Terraform Pipeline
 
 ```yaml
