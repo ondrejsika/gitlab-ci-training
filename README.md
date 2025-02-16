@@ -283,6 +283,20 @@ post:
   script: echo Post ...
 ```
 
+Example with `include`
+
+```yaml
+include: https://raw.githubusercontent.com/ondrejsika/gitlab-ci-training/refs/heads/master/examples/library/hello/hello.gitlab-ci.yml
+
+pre:
+  stage: .pre
+  script: echo Pre ...
+
+post:
+  stage: .post
+  script: echo Post ...
+```
+
 ### Needs
 
 - [Docs (Needs)](https://docs.gitlab.com/ee/ci/yaml/#needs)
