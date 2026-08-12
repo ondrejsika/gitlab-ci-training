@@ -36,11 +36,15 @@ Also feel free to propose improvements by creating issues.
 
 <https://devopslive.cz>
 
+<!--
+
 ## DevOps Kniha (Czech only)
 
 [![](./images/devops_kniha.jpg)](https://kniha.sika.io)
 
 <https://kniha.sika.io>
+
+-->
 
 ### Chat
 
