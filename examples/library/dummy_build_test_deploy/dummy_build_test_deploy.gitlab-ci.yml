@@ -1,0 +1,39 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build fe:
+  stage: build
+  script:
+    - echo "Building frontend..."
+    - sleep 10
+    - echo Done
+
+build be:
+  stage: build
+  script:
+    - echo "Building backend..."
+    - sleep 10
+    - echo Done
+
+test fe:
+  stage: test
+  script:
+    - echo "Testing frontend..."
+    - sleep 10
+    - echo Done
+
+test be:
+  stage: test
+  script:
+    - echo "Testing backend..."
+    - sleep 10
+    - echo Done
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying..."
+    - sleep 10
+    - echo Done
